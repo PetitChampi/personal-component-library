@@ -1,0 +1,21 @@
+// watch command:
+// sass --watch styles/index.scss:styles/css/index.css
+
+:root {
+  --color-body: #fff;
+  --color-text: #424242;
+  --color-primary: #C5A858;
+  --color-primary-alt: #edca70;
+  --color-primary-background: rgba(237, 202, 112, .2);
+  --color-secondary: #3B96B8;
+  --color-secondary-background: rgba(59, 150, 184, .2);
+  --color-gray-background: rgba(0,0,0,.05);
+  --color-subtitles: rgba(0,0,0,.4);
+  --color-shadow: rgba(0,0,0,.2);
+  --color-green: #549245;
+  --color-red: #a94e54;
+  --color-red-background: rgba(169, 78, 84, .1);
+  --color-table-borders: #d7d7d7;
+}
+
+$default-ff: 'quicksand';

@@ -1,0 +1,61 @@
+.accordion {
+
+  // optional - for visual purposes on this demo only
+  max-width: 400px;
+  border: 1px solid var(--color-text);
+  padding: 10px 15px;
+  border-radius: 10px;
+  // end of optional styles
+
+  &-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.4s;
+    &--icon {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0.15rem;
+        height: 100%;
+        transition: all .2s;
+      }
+      &::before {
+        left: 3px;
+        transform: rotate(45deg);
+        background-color: var(--color-text);
+      }
+      &::after {
+        left: -3px;
+        transform: rotate(-45deg);
+        background-color: var(--color-text);
+      }
+      &.show::before {
+        left: 3px;
+        transform: rotate(-45deg);
+      }
+      &.show::after {
+        left: -3px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  &-show {
+    min-height: 100px;
+  }
+  &-icon-rotate {
+    transform: rotate(90deg);
+  }
+}

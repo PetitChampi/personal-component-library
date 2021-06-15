@@ -1,0 +1,89 @@
+.custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &-wrapper {
+    position: relative;
+    user-select: none;
+    width: 100%;
+  }
+  &--trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid var(--color-text);
+    border-radius: 10px;
+    background: var(--color-body);
+    cursor: pointer;
+  }
+  &-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--color-shadow);
+    background: var(--color-body);
+    transition: all .2s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+    &--option {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: all .2s;
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-secondary-background);
+      }
+      &.selected {
+        color: var(--color-body);
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+  &.open &-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &--arrow {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    margin-left: 20px;
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      width: 0.15rem;
+      height: 100%;
+      transition: all .2s;
+    }
+    &::before {
+      left: 3px;
+      transform: rotate(45deg);
+      background-color: var(--color-text);
+    }
+    &::after {
+      left: -3px;
+      transform: rotate(-45deg);
+      background-color: var(--color-text);
+    }
+  }
+  &.open &--arrow::before {
+    left: 3px;
+    transform: rotate(-45deg);
+  }
+  &.open &--arrow::after {
+    left: -3px;
+    transform: rotate(45deg);
+  }
+}
